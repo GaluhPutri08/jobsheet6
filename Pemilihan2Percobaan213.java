@@ -6,9 +6,9 @@ public class Pemilihan2Percobaan213{
 
         Scanner input13 =new Scanner(System.in);
 
-        int pilihan_menu, harga;
-        String member;
-        double total_bayar, diskon;
+        int pilihan_menu, harga = 0;
+        String member, jenis_pembayaran;
+        double total_bayar = 0, diskon=0;
 
         System.out.println("---------------------------------");
         System.out.println("========= MENU KAFE JTI =========");
@@ -73,9 +73,22 @@ public class Pemilihan2Percobaan213{
         System.out.println("Member tidak valid");
     }
     System.out.println("------------------------------------");
-    input13.close();
-        
+    
+     
+    
+    System.out.println("Pilih jenis pembayaran (cash/qris): ");
+    jenis_pembayaran = input13.nextLine();
 
+    if (jenis_pembayaran.equalsIgnoreCase("qris")){
+        total_bayar -= 1000;
+        System.out.println("Anda mendapat potongan 1000 karena menggunakan QRIS");
+
+    } else if (!jenis_pembayaran.equalsIgnoreCase("cash")){
+    System.out.println("Jenis pembayaran tidak valid");}
+
+     System.out.println("total bayar akhir = " + total_bayar);
+     System.out.println("----------------------------------");
+     input13.close();
 
     }
 
